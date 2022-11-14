@@ -29,49 +29,81 @@ namespace Lefty
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.LstCommands = new System.Windows.Forms.ListBox();
-            this.TmrSpeaking = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // LstCommands
+            // label1
             // 
-            this.LstCommands.BackColor = System.Drawing.Color.Teal;
-            this.LstCommands.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LstCommands.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LstCommands.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LstCommands.FormattingEnabled = true;
-            this.LstCommands.ItemHeight = 39;
-            this.LstCommands.Location = new System.Drawing.Point(0, 0);
-            this.LstCommands.Name = "LstCommands";
-            this.LstCommands.Size = new System.Drawing.Size(501, 426);
-            this.LstCommands.TabIndex = 0;
-            this.LstCommands.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(85, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Input";
             // 
-            // TmrSpeaking
+            // label2
             // 
-            this.TmrSpeaking.Enabled = true;
-            this.TmrSpeaking.Interval = 1000;
-            this.TmrSpeaking.Tick += new System.EventHandler(this.TmrSpeaking_Tick);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(208, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Output";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(125, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "State: Awake";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(49, 35);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 5;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(175, 35);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(120, 95);
+            this.listBox2.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(501, 426);
-            this.Controls.Add(this.LstCommands);
+            this.ClientSize = new System.Drawing.Size(327, 222);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Lefty";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox LstCommands;
-        private System.Windows.Forms.Timer TmrSpeaking;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
 

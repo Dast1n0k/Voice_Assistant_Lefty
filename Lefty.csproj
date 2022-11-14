@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF6ABCD9-B23B-4EE7-BE5A-DB46B3B35BC1}</ProjectGuid>
+    <ProjectGuid>{A500F8FA-9A62-4CD8-BE61-F7AFF6565834}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Lefty</RootNamespace>
     <AssemblyName>Lefty</AssemblyName>
@@ -79,10 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DefaultCommansds.txt" />
-    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

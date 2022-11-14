@@ -1,0 +1,10 @@
+D:\C#\assistant_lefty\Lefty\bin\Debug\Lefty.exe.config
+D:\C#\assistant_lefty\Lefty\bin\Debug\Lefty.exe
+D:\C#\assistant_lefty\Lefty\bin\Debug\Lefty.pdb
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.csproj.AssemblyReference.cache
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.Form1.resources
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.Properties.Resources.resources
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.csproj.GenerateResource.cache
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.csproj.CoreCompileInputs.cache
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.exe
+D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.pdb
