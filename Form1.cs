@@ -13,37 +13,35 @@ using System.Diagnostics;
 using System.Xml;
 using System.Globalization;
 
+
 namespace Lefty
 {
     public partial class Form1 : Form
     {
-        String condition;
-        String temp;
-        SpeechSynthesizer s = new SpeechSynthesizer();
-        Boolean wake = false;
-        Choices list = new Choices();
-
+        SpeechSynthesizer s = new SpeechSynthesizer();//Add voice of assistant
+        Boolean wake = false; //statement of voice assistant
+        Choices list = new Choices();//create list of commands
+        DataSet data = new DataSet();// create obj of class dataset
         public Form1()
 
         {
-
+            //create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
-
+            // list of commands 
             list.Add(new String[] {"hello", "how are you", "what time is it", "what is today", "open google", "wake", "sleep",
-            "weather", "what about weather", "lefty"
+            "weather", "what about weather", "lefty", "show commands"
             }); 
 
-           
+            //create a obj of class for grammar of voice bot
             GrammarBuilder gb = new GrammarBuilder();
             gb.Culture = new System.Globalization.CultureInfo("en-US"); // add Culture Info
 
-            gb.Append(list);
+            gb.Append(list);//add to grammar our commands 
             Grammar g = new Grammar(gb);
-            rec.LoadGrammar(g);
             try
             {
                 rec.RequestRecognizerUpdate();
-                //rec.LoadGrammar(gr);
+                rec.LoadGrammar(g);//load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
                 rec.SpeechRecognized += rec_SpeachRecognized;
                 rec.SetInputToDefaultAudioDevice();
                 rec.RecognizeAsync(RecognizeMode.Multiple);
@@ -52,14 +50,14 @@ namespace Lefty
             catch { return; }
 
 
-            CultureInfo myLang = new CultureInfo("es-US");
+            CultureInfo myLang = new CultureInfo("en-US");
 
-            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 25, myLang);
+            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 25, myLang);//Choice the voice bot gender, age and lang
 
 
             InitializeComponent();
         }
-
+        // func for say 
         public void say(String h)
         {
 
@@ -68,10 +66,12 @@ namespace Lefty
             listBox2.Items.Add(h);
         }
 
+        //commands
         private void rec_SpeachRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            String speech = e.Result.Text;
-            listBox1.Items.Add(speech);
+            String speech = e.Result.Text;//convert your voice to text
+            listBox1.Items.Add(speech);//add your text to input box
+            
             if (speech == "lefty")
             {
                 wake = true;
@@ -98,7 +98,7 @@ namespace Lefty
 
                 if (speech == "hello")
                 {
-                    say("I'am here, how can I help you");
+                    say(data.greetings_action());// func from database
                 }
 
                 if (speech == "what time is it")
@@ -127,11 +127,16 @@ namespace Lefty
                     //continue
                 }
 
+                if (speech == "show commands")
+                {
+                    
+                    MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
+                }
             }
 
             else
             {
-                listBox2.Items.Add("Say Lefty to wake me");
+                listBox2.Items.Add("Say Lefty to wake up me");
             }
 
 
