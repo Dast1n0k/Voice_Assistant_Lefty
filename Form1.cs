@@ -11,6 +11,7 @@ using System.Speech.Synthesis;
 using System.Speech.Recognition;
 using System.Diagnostics;
 using System.Xml;
+using System.Globalization;
 
 namespace Lefty
 {
@@ -26,17 +27,23 @@ namespace Lefty
 
         {
 
-            SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
+            SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
 
             list.Add(new String[] {"hello", "how are you", "what time is it", "what is today", "open google", "wake", "sleep",
             "weather", "what about weather", "lefty"
             }); 
-            Grammar gr = new Grammar(new GrammarBuilder(list));
 
+           
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Culture = new System.Globalization.CultureInfo("en-US"); // add Culture Info
+
+            gb.Append(list);
+            Grammar g = new Grammar(gb);
+            rec.LoadGrammar(g);
             try
             {
                 rec.RequestRecognizerUpdate();
-                rec.LoadGrammar(gr);
+                //rec.LoadGrammar(gr);
                 rec.SpeechRecognized += rec_SpeachRecognized;
                 rec.SetInputToDefaultAudioDevice();
                 rec.RecognizeAsync(RecognizeMode.Multiple);
@@ -44,8 +51,11 @@ namespace Lefty
             }
             catch { return; }
 
-            s.SelectVoiceByHints(VoiceGender.Female);
-            
+            CultureInfo myLang = new CultureInfo("es-US");
+
+            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 25, myLang);
+
+
             InitializeComponent();
         }
 
