@@ -8,3 +8,14 @@ D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.csproj.GenerateResource.cache
 D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.csproj.CoreCompileInputs.cache
 D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.exe
 D:\C#\assistant_lefty\Lefty\obj\Debug\Lefty.pdb
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Lefty.exe.config
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Lefty.exe
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Lefty.pdb
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.AssemblyReference.cache
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.SuggestedBindingRedirects.cache
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.Form1.resources
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.Properties.Resources.resources
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.GenerateResource.cache
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CoreCompileInputs.cache
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.exe
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.pdb

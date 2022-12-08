@@ -26,7 +26,7 @@ namespace Lefty
 
         {
 
-            SpeechRecognitionEngine rec = new SpeechRecognitionEngine();
+            SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
 
             list.Add(new String[] {"hello", "how are you", "what time is it", "what is today", "open google", "wake", "sleep",
             "weather", "what about weather", "lefty"
