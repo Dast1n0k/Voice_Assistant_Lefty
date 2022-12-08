@@ -12,7 +12,7 @@ using System.Speech.Recognition;
 using System.Diagnostics;
 using System.Xml;
 using System.Globalization;
-
+using System.IO;
 
 namespace Lefty
 {
@@ -28,9 +28,7 @@ namespace Lefty
             //create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
             // list of commands 
-            list.Add(new String[] {"hello", "how are you", "what time is it", "what is today", "open google", "wake", "sleep",
-            "weather", "what about weather", "lefty", "show commands"
-            }); 
+            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt")); 
 
             //create a obj of class for grammar of voice bot
             GrammarBuilder gb = new GrammarBuilder();
@@ -52,7 +50,7 @@ namespace Lefty
 
             CultureInfo myLang = new CultureInfo("en-US");
 
-            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 25, myLang);//Choice the voice bot gender, age and lang
+            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Senior, 60, myLang);//Choice the voice bot gender, age and lang
 
 
             InitializeComponent();
@@ -66,6 +64,13 @@ namespace Lefty
             listBox2.Items.Add(h);
         }
 
+        public void search_music (String s)
+        {
+            
+            say("What music to you want?");
+            wake = true;
+            Process.Start($"https://soundcloud.com/search?q={s}");
+        }
         //commands
         private void rec_SpeachRecognized(object sender, SpeechRecognizedEventArgs e)
         {
@@ -99,6 +104,13 @@ namespace Lefty
                 if (speech == "hello")
                 {
                     say(data.greetings_action());// func from database
+                }
+
+                if (speech == "search music")
+                {
+                    
+                    search_music(speech);
+
                 }
 
                 if (speech == "what time is it")
@@ -141,6 +153,7 @@ namespace Lefty
 
 
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
