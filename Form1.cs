@@ -28,7 +28,8 @@ namespace Lefty
             //create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
             // list of commands 
-            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt")); 
+            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt"));
+            
 
             //create a obj of class for grammar of voice bot
             GrammarBuilder gb = new GrammarBuilder();
@@ -55,11 +56,11 @@ namespace Lefty
 
             InitializeComponent();
         }
-        // func for say 
+        // func for saying
         public void say(String h)
         {
 
-            s.Speak(h);
+            s.SpeakAsync(h);
             wake = false;
             listBox2.Items.Add(h);
         }
@@ -86,16 +87,19 @@ namespace Lefty
 
             if (speech == "wake")
             {
-                wake = true;
                 label3.Text = "State: Awake";
+                wake = true;
+                listBox2.Items.Add("I am listening");   
             }
 
             if (speech == "sleep") 
             { 
                 wake = false;
                 label3.Text = "State: Sleeping";
-                say("Just say wake, if you need me");
+                say("Just say wake or Lefty if you need me");
             }
+
+            
 
             if (wake == true)
             {

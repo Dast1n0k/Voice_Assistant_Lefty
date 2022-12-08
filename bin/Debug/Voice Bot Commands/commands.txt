@@ -10,3 +10,5 @@ what about weather
 lefty
 show commands
 search music
+stop
+cat
