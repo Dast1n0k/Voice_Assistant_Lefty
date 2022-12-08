@@ -28,8 +28,7 @@ namespace Lefty
             //create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
             // list of commands 
-            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt"));
-            
+            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt")); 
 
             //create a obj of class for grammar of voice bot
             GrammarBuilder gb = new GrammarBuilder();
@@ -80,26 +79,18 @@ namespace Lefty
             
             if (speech == "lefty")
             {
-                wake = true;
-                listBox2.Items.Add("I am listening");
-            }
-           
-
-            if (speech == "wake")
-            {
                 label3.Text = "State: Awake";
                 wake = true;
-                listBox2.Items.Add("I am listening");   
+                listBox2.Items.Add("I am listening");
             }
 
             if (speech == "sleep") 
             { 
                 wake = false;
                 label3.Text = "State: Sleeping";
-                say("Just say wake or Lefty if you need me");
+                say("Just say Lefty if you need me");
             }
 
-            
 
             if (wake == true)
             {
@@ -147,15 +138,14 @@ namespace Lefty
                 {
                     
                     MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
+                 
                 }
+                
             }
-
             else
             {
-                listBox2.Items.Add("Say Lefty to wake up me");
+                listBox2.Items.Add("Just say Lefty if you need me");
             }
-
-
         }
 
 
