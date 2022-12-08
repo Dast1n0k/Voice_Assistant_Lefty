@@ -51,6 +51,7 @@ namespace Lefty
             }
             catch { return; }
 
+
             CultureInfo myLang = new CultureInfo("es-US");
 
             s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 25, myLang);
@@ -61,6 +62,7 @@ namespace Lefty
 
         public void say(String h)
         {
+
             s.Speak(h);
             wake = false;
             listBox2.Items.Add(h);
@@ -69,11 +71,13 @@ namespace Lefty
         private void rec_SpeachRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             String speech = e.Result.Text;
-            
+            listBox1.Items.Add(speech);
             if (speech == "lefty")
             {
                 wake = true;
+                listBox2.Items.Add("I am listening");
             }
+           
 
             if (speech == "wake")
             {
@@ -95,7 +99,6 @@ namespace Lefty
                 if (speech == "hello")
                 {
                     say("I'am here, how can I help you");
-
                 }
 
                 if (speech == "what time is it")
@@ -125,13 +128,18 @@ namespace Lefty
                 }
 
             }
-            listBox1.Items.Add(speech);
+
+            else
+            {
+                listBox2.Items.Add("Say Lefty to wake me");
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }
