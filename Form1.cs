@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Xml;
 using System.Globalization;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Lefty
 {
@@ -139,6 +140,10 @@ namespace Lefty
                     
                     MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
                  
+                }
+                if (speech == "joke")
+                {
+                    say(data.get_jokes());
                 }
                 
             }

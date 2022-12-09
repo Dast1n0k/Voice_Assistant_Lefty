@@ -12,3 +12,4 @@ show commands
 search music
 stop
 cat
+joke
