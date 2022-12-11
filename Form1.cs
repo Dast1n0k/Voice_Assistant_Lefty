@@ -132,7 +132,7 @@ namespace Lefty
 
                 if (speech == "weather")
                 {
-                    //continue
+                    say(data.get_weather());//func from database
                 }
 
                 if (speech == "show commands")
@@ -143,13 +143,13 @@ namespace Lefty
                 }
                 if (speech == "joke")
                 {
-                    say(data.get_jokes());
+                    say(data.get_jokes());//func from database
                 }
                 
             }
             else
             {
-                listBox2.Items.Add("Just say Lefty if you need me");
+                listBox2.Items.Add("Just say Lefty \n if you need me");
             }
         }
 
