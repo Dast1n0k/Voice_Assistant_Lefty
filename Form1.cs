@@ -145,11 +145,15 @@ namespace Lefty
                 {
                     say(data.get_jokes());//func from database
                 }
+                if (speech == "toss coin")
+                {
+                    say(data.toss_a_coin());
+                }
                 
             }
             else
             {
-                listBox2.Items.Add("Just say Lefty \n if you need me");
+                listBox2.Items.Add("Just say Lefty if you need me");
             }
         }
 

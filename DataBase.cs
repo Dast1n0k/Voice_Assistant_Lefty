@@ -11,7 +11,8 @@ namespace Lefty
     class DataSet 
     { 
         
-        String[] greetings = new String[4] { "Hello", "Hi", "Hi, how are you", "I'am here, how can I help you" };
+        String[] greetings = new String[4] { "Hello", "Hi", "Hi, how are you", "I'm here, how can I help you" };
+        String[] heads_or_tails = new String[2] { "tail","head" };
 
         public String greetings_action()
         {
@@ -50,7 +51,14 @@ namespace Lefty
                 response = streamReader.ReadToEnd();
             }
             WeatherInfo weatherResponse = JsonConvert.DeserializeObject<WeatherInfo>(response);
+
             return "In city " + weatherResponse.name + " " + weatherResponse.Weather[0].description + " " + "temperature" + " " + weatherResponse.Main.temp + " "  + "degrees Celsius";
+        }
+        public String toss_a_coin()
+        {
+            Random random = new Random();
+            return heads_or_tails[random.Next(2)];
+
         }
     }
     

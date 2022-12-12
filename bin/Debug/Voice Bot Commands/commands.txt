@@ -13,3 +13,4 @@ search music
 stop
 cat
 joke
+toss coin
