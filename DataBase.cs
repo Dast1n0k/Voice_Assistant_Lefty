@@ -13,7 +13,7 @@ namespace Lefty
         
         String[] greetings = new String[4] { "Hello", "Hi", "Hi, how are you", "I'm here, how can I help you" };
         String[] heads_or_tails = new String[2] { "tail","head" };
-        String Error = "Lost internet connection";
+        String Error = "Lost internet connection"; //Error: without internet
 
         public String greetings_action()
         {
@@ -61,7 +61,7 @@ namespace Lefty
                 }
                 WeatherInfo weatherResponse = JsonConvert.DeserializeObject<WeatherInfo>(response);
 
-                return "In city " + weatherResponse.name + " " + weatherResponse.Weather[0].description + " " + "temperature" + " " + weatherResponse.Main.temp + " "  + "degrees Celsius";
+                return "In city " + weatherResponse.name + " " + weatherResponse.Weather[0].description + " " + "temperature" + " " + Math.Round(weatherResponse.Main.temp) + " "  + "degrees Celsius";
             }
             catch
             {

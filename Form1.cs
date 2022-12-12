@@ -130,7 +130,7 @@ namespace Lefty
                     Process.Start("https://www.google.com/");
                 }
 
-                if (speech == "weather")
+                if (speech == "stop")
                 {
                     say(data.get_weather());//func from database
                 }
