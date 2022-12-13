@@ -86,10 +86,13 @@ namespace Lefty
             }
 
             if (speech == "sleep") 
-            { 
+            {
+                if (wake == true)
+                {
+                    s.SpeakAsync("Just say Lefty if you need me");
+                }
                 wake = false;
                 label3.Text = "State: Sleeping";
-                say("Just say Lefty if you need me");
             }
 
 
@@ -130,7 +133,7 @@ namespace Lefty
                     Process.Start("https://www.google.com/");
                 }
 
-                if (speech == "stop")
+                if (speech == "weather")
                 {
                     say(data.get_weather());//func from database
                 }
