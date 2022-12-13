@@ -33,3 +33,11 @@ D:\another\C#\Dast1n0k\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CoreCompileI
 D:\another\C#\Dast1n0k\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CopyComplete
 D:\another\C#\Dast1n0k\Voice_Assistant_Lefty\obj\Debug\Lefty.exe
 D:\another\C#\Dast1n0k\Voice_Assistant_Lefty\obj\Debug\Lefty.pdb
+E:\Source\obj\Debug\Lefty.csproj.AssemblyReference.cache
+E:\Source\obj\Debug\Lefty.csproj.SuggestedBindingRedirects.cache
+E:\Source\obj\Debug\Lefty.Form1.resources
+E:\Source\obj\Debug\Lefty.Properties.Resources.resources
+E:\Source\obj\Debug\Lefty.csproj.GenerateResource.cache
+E:\Source\obj\Debug\Lefty.csproj.CoreCompileInputs.cache
+E:\Source\obj\Debug\Lefty.exe
+E:\Source\obj\Debug\Lefty.pdb
