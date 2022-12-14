@@ -83,14 +83,15 @@ namespace Lefty
             if (speech == "wake")
             {
                 this.Show();
-                wake = false;
-
+              
+                notifyIcon1.Visible = false;
             }
 
             if (speech == "hide")
             {
                 this.Hide();
                 wake = false;
+                notifyIcon1.Visible = true;
             }
 
             if (wake == true)
@@ -158,6 +159,20 @@ namespace Lefty
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            notifyIcon1.Visible = true;
         }
     }
 }
