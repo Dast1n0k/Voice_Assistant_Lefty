@@ -41,3 +41,4 @@ E:\Source\obj\Debug\Lefty.csproj.GenerateResource.cache
 E:\Source\obj\Debug\Lefty.csproj.CoreCompileInputs.cache
 E:\Source\obj\Debug\Lefty.exe
 E:\Source\obj\Debug\Lefty.pdb
+D:\another\C#\Dast1n0k\Voice_Assistant_Lefty\bin\Debug\Guna.UI2.dll

@@ -59,15 +59,13 @@ namespace Lefty
         // func for saying
         public void say(String h)
         {
-
             s.SpeakAsync(h);
             wake = false;
-            listBox2.Items.Add(h);
+            guna2TextBox2.Text = h;
         }
 
         public void search_music (String s)
         {
-            
             say("What music to you want?");
             wake = true;
             Process.Start($"https://soundcloud.com/search?q={s}");
@@ -76,13 +74,13 @@ namespace Lefty
         private void rec_SpeachRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             String speech = e.Result.Text;//convert your voice to text
-            listBox1.Items.Add(speech);//add your text to input box
+            guna2TextBox1.Text = speech; ;//add your text to input box
             
             if (speech == "lefty")
             {
-                label3.Text = "State: Awake";
+                guna2TextBox3.Text = "State: Awake";
                 wake = true;
-                listBox2.Items.Add("I am listening");
+                guna2TextBox2.Text = ("I am listening");
             }
 
             if (speech == "sleep") 
@@ -92,7 +90,7 @@ namespace Lefty
                     s.SpeakAsync("Just say Lefty if you need me");
                 }
                 wake = false;
-                label3.Text = "State: Sleeping";
+                guna2TextBox3.Text = "State: Sleeping";
             }
 
 
@@ -107,9 +105,7 @@ namespace Lefty
 
                 if (speech == "search music")
                 {
-                    
                     search_music(speech);
-
                 }
 
                 if (speech == "what time is it")
@@ -125,7 +121,6 @@ namespace Lefty
                 if (speech == "how are you")
                 {
                     say("Great, and you?");
-
                 }
 
                 if (speech == "open google")
@@ -140,9 +135,7 @@ namespace Lefty
 
                 if (speech == "show commands")
                 {
-                    
                     MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
-                 
                 }
                 if (speech == "joke")
                 {
@@ -152,11 +145,10 @@ namespace Lefty
                 {
                     say(data.toss_a_coin());
                 }
-                
             }
             else
             {
-                listBox2.Items.Add("Just say Lefty if you need me");
+                guna2TextBox2.Text = ("Just say Lefty if you need me");
             }
         }
 
@@ -164,6 +156,20 @@ namespace Lefty
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.guna2Shapes2.Zoom <= 140)
+            {
+
+                this.guna2Shapes2.Zoom += 1;
+
+            }
+            else
+            {
+                this.guna2Shapes2.Zoom = 100;
+            }
         }
     }
 }
