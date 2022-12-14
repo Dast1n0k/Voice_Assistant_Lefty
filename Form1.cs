@@ -157,19 +157,5 @@ namespace Lefty
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (this.guna2Shapes2.Zoom <= 140)
-            {
-
-                this.guna2Shapes2.Zoom += 1;
-
-            }
-            else
-            {
-                this.guna2Shapes2.Zoom = 100;
-            }
-        }
     }
 }
