@@ -8,9 +8,12 @@ sleep
 weather
 what about weather
 lefty
-show commands
+help
 search music
 stop
 cat
 joke
 toss coin
+exit
+hide
+apear

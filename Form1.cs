@@ -14,7 +14,7 @@ using System.Xml;
 using System.Globalization;
 using System.IO;
 using Newtonsoft.Json;
-
+using System.Windows;
 namespace Lefty
 {
     public partial class Form1 : Form
@@ -37,17 +37,13 @@ namespace Lefty
 
             gb.Append(list);//add to grammar our commands 
             Grammar g = new Grammar(gb);
-            try
-            {
-                rec.RequestRecognizerUpdate();
-                rec.LoadGrammar(g);//load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
-                rec.SpeechRecognized += rec_SpeachRecognized;
-                rec.SetInputToDefaultAudioDevice();
-                rec.RecognizeAsync(RecognizeMode.Multiple);
+       
 
-            }
-            catch { return; }
-
+            rec.RequestRecognizerUpdate();
+            rec.LoadGrammar(g);//load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
+            rec.SpeechRecognized += rec_SpeachRecognized;
+            rec.SetInputToDefaultAudioDevice();
+            rec.RecognizeAsync(RecognizeMode.Multiple);
 
             CultureInfo myLang = new CultureInfo("en-US");
 
@@ -59,9 +55,10 @@ namespace Lefty
         // func for saying
         public void say(String h)
         {
-            s.SpeakAsync(h);
             wake = false;
+            s.SpeakAsync(h);
             guna2TextBox2.Text = h;
+            guna2TextBox3.Text = "State: Sleeping";
         }
 
         public void search_music (String s)
@@ -78,21 +75,23 @@ namespace Lefty
             
             if (speech == "lefty")
             {
+                
                 guna2TextBox3.Text = "State: Awake";
                 wake = true;
                 guna2TextBox2.Text = ("I am listening");
             }
-
-            if (speech == "sleep") 
+            if (speech == "wake")
             {
-                if (wake == true)
-                {
-                    s.SpeakAsync("Just say Lefty if you need me");
-                }
+                this.Show();
                 wake = false;
-                guna2TextBox3.Text = "State: Sleeping";
+
             }
 
+            if (speech == "hide")
+            {
+                this.Hide();
+                wake = false;
+            }
 
             if (wake == true)
             {
@@ -133,7 +132,7 @@ namespace Lefty
                     say(data.get_weather());//func from database
                 }
 
-                if (speech == "show commands")
+                if (speech == "help")
                 {
                     MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
                 }
@@ -145,14 +144,17 @@ namespace Lefty
                 {
                     say(data.toss_a_coin());
                 }
-            }
-            else
-            {
-                guna2TextBox2.Text = ("Just say Lefty if you need me");
+
+                if (speech == "exit")
+                {
+                    Application.Exit();
+                }
             }
         }
 
-
+        
+           
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
