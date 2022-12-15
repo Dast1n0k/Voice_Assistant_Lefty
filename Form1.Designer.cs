@@ -33,19 +33,20 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -108,27 +109,17 @@
             this.guna2TextBox2.Size = new System.Drawing.Size(200, 56);
             this.guna2TextBox2.TabIndex = 0;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.Bisque;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(23, 35);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "guna2Button1";
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Lefty Assistant";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // guna2ControlBox1
             // 
@@ -144,54 +135,31 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 2;
             // 
-            // guna2Panel1
+            // guna2ControlBox2
             // 
-            this.guna2Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel1.BackgroundImage")));
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.guna2Shapes2);
-            this.guna2Panel1.Controls.Add(this.guna2Shapes1);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
-            this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(322, 305);
-            this.guna2Panel1.TabIndex = 2;
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(246, 0);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(39, 29);
+            this.guna2ControlBox2.TabIndex = 3;
+            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
             // 
-            // guna2Shapes2
+            // guna2CirclePictureBox1
             // 
-            this.guna2Shapes2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes2.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.guna2Shapes2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.guna2Shapes2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes2.Location = new System.Drawing.Point(62, 28);
-            this.guna2Shapes2.Name = "guna2Shapes2";
-            this.guna2Shapes2.PolygonSkip = 1;
-            this.guna2Shapes2.Rotate = 0F;
-            this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
-            this.guna2Shapes2.Size = new System.Drawing.Size(200, 200);
-            this.guna2Shapes2.TabIndex = 6;
-            this.guna2Shapes2.Text = "guna2Shapes2";
-            this.guna2Shapes2.UseTransparentBackground = true;
-            this.guna2Shapes2.Zoom = 100;
-            // 
-            // guna2Shapes1
-            // 
-            this.guna2Shapes1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes1.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.guna2Shapes1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.guna2Shapes1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes1.Location = new System.Drawing.Point(62, 28);
-            this.guna2Shapes1.Name = "guna2Shapes1";
-            this.guna2Shapes1.PolygonSkip = 1;
-            this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
-            this.guna2Shapes1.Size = new System.Drawing.Size(200, 200);
-            this.guna2Shapes1.TabIndex = 0;
-            this.guna2Shapes1.Text = "guna2Shapes1";
-            this.guna2Shapes1.UseTransparentBackground = true;
-            this.guna2Shapes1.Zoom = 90;
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(82, 48);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 4;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2TextBox1
             // 
@@ -220,37 +188,68 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(200, 53);
             this.guna2TextBox1.TabIndex = 5;
             // 
-            // guna2CirclePictureBox1
+            // guna2Shapes1
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(82, 48);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 4;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2Shapes1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes1.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.guna2Shapes1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.guna2Shapes1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes1.Location = new System.Drawing.Point(62, 28);
+            this.guna2Shapes1.Name = "guna2Shapes1";
+            this.guna2Shapes1.PolygonSkip = 1;
+            this.guna2Shapes1.Rotate = 0F;
+            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
+            this.guna2Shapes1.Size = new System.Drawing.Size(200, 200);
+            this.guna2Shapes1.TabIndex = 0;
+            this.guna2Shapes1.Text = "guna2Shapes1";
+            this.guna2Shapes1.UseTransparentBackground = true;
+            this.guna2Shapes1.Zoom = 90;
             // 
-            // guna2ControlBox2
+            // guna2Shapes2
             // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(246, 0);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(39, 29);
-            this.guna2ControlBox2.TabIndex = 3;
-            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
+            this.guna2Shapes2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes2.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.guna2Shapes2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.guna2Shapes2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes2.Location = new System.Drawing.Point(62, 28);
+            this.guna2Shapes2.Name = "guna2Shapes2";
+            this.guna2Shapes2.PolygonSkip = 1;
+            this.guna2Shapes2.Rotate = 0F;
+            this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
+            this.guna2Shapes2.Size = new System.Drawing.Size(200, 200);
+            this.guna2Shapes2.TabIndex = 6;
+            this.guna2Shapes2.Text = "guna2Shapes2";
+            this.guna2Shapes2.UseTransparentBackground = true;
+            this.guna2Shapes2.Zoom = 100;
             // 
-            // notifyIcon1
+            // guna2Panel1
             // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "Lefty Assistant";
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            this.guna2Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel1.BackgroundImage")));
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
+            this.guna2Panel1.Controls.Add(this.guna2Shapes2);
+            this.guna2Panel1.Controls.Add(this.guna2Shapes1);
+            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(322, 305);
+            this.guna2Panel1.TabIndex = 2;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.guna2Panel2;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, -72);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(242, 94);
+            this.guna2Panel2.TabIndex = 7;
             // 
             // Form1
             // 
@@ -261,11 +260,12 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -273,17 +273,18 @@
         #endregion
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        public Guna.UI2.WinForms.Guna2Shapes guna2Shapes2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        public Guna.UI2.WinForms.Guna2Shapes guna2Shapes2;
+        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }
 

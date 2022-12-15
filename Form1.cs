@@ -51,10 +51,12 @@ namespace Lefty
 
 
             InitializeComponent();
+
         }
         // func for saying
         public void say(String h)
         {
+            notifyIcon1.Icon = new Icon("sleep.ico");
             wake = false;
             s.SpeakAsync(h);
             guna2TextBox2.Text = h;
@@ -73,9 +75,10 @@ namespace Lefty
             String speech = e.Result.Text;//convert your voice to text
             guna2TextBox1.Text = speech; ;//add your text to input box
             
+
             if (speech == "lefty")
             {
-                
+                notifyIcon1.Icon = new Icon("active.ico");
                 guna2TextBox3.Text = "State: Awake";
                 wake = true;
                 guna2TextBox2.Text = ("I am listening");
@@ -83,14 +86,14 @@ namespace Lefty
             if (speech == "wake")
             {
                 this.Show();
-              
-                notifyIcon1.Visible = false;
+                
+                notifyIcon1.Visible = true;
             }
 
             if (speech == "hide")
             {
                 this.Hide();
-                wake = false;
+                
                 notifyIcon1.Visible = true;
             }
 
@@ -166,7 +169,7 @@ namespace Lefty
         {
             Show();
             this.WindowState = FormWindowState.Normal;
-            notifyIcon1.Visible = false;
+            notifyIcon1.Visible = true;
         }
 
         private void guna2ControlBox2_Click(object sender, EventArgs e)
@@ -174,5 +177,6 @@ namespace Lefty
             Hide();
             notifyIcon1.Visible = true;
         }
+
     }
 }

@@ -38,7 +38,7 @@ namespace Lefty
                     var response = responseReader.ReadToEnd();
                     Joke joke = JsonConvert.DeserializeObject<Joke>(response);
 
-                    return joke.setup + "\n" + joke.punchline;
+                    return joke.setup + " " + joke.punchline;
                 }
             }
             catch

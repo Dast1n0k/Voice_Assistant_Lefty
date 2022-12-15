@@ -57,3 +57,7 @@ D:\ideas\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CoreCompileInputs.cache
 D:\ideas\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CopyComplete
 D:\ideas\Voice_Assistant_Lefty\obj\Debug\Lefty.exe
 D:\ideas\Voice_Assistant_Lefty\obj\Debug\Lefty.pdb
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Guna.UI2.dll
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Newtonsoft.Json.dll
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Newtonsoft.Json.xml
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CopyComplete
