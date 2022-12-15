@@ -69,11 +69,12 @@ namespace Lefty
             wake = true;
             Process.Start($"https://soundcloud.com/search?q={s}");
         }
+        
         //commands
         private void rec_SpeachRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             String speech = e.Result.Text;//convert your voice to text
-            guna2TextBox1.Text = speech; ;//add your text to input box
+            guna2TextBox1.Text = speech.ToUpper();//add your text to input box
             
 
             if (speech == "lefty")
