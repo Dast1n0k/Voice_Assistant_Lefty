@@ -148,16 +148,16 @@ namespace Lefty
                 {
                     say(data.toss_a_coin());
                 }
-
+                if (speech == "news")
+                {
+                    say(data.get_news());
+                }
                 if (speech == "exit")
                 {
                     Application.Exit();
                 }
             }
         }
-
-        
-           
         
         private void Form1_Load(object sender, EventArgs e)
         {

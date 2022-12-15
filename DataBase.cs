@@ -69,6 +69,29 @@ namespace Lefty
             }
 
         }
+        public String get_news() //news parse
+        {
+            string url = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=xNdLOT46LfLS2I1cIOv5IVHXqaF2vdDE";
+
+            try
+            {
+
+
+                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                string response;
+                using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+                {
+                    response = streamReader.ReadToEnd();
+                }
+                NewsInfo newsResponse = JsonConvert.DeserializeObject<NewsInfo>(response);
+                return newsResponse.results[1].title;
+            }
+            catch
+            {
+                return Error;
+            }
+        }
         public String toss_a_coin() //toss coin
         {
             Random random = new Random();

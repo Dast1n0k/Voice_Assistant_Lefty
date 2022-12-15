@@ -23,4 +23,12 @@ namespace Lefty
         public WeatherDescription Main { get; set; }
         public List<WeatherDescription> Weather { get; set; }
     }
+    class NewsDescription
+    {
+        public string title { get; set; }
+    }
+    class NewsInfo
+    {
+        public List<NewsDescription> results { get; set; }
+    }
 }

@@ -16,4 +16,5 @@ joke
 toss coin
 exit
 hide
-apear
+appear
+news
