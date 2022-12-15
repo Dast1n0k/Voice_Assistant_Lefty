@@ -1,20 +1,23 @@
-﻿hello
-how are you
-what time is it
-what is today
-open google
-wake
-sleep
-weather
-what about weather
-lefty
-help
-search music
-stop
-cat
-joke
-toss coin
-exit
-hide
-appear
-news
+﻿Hello
+How are you
+What time is it
+What is today
+Open google
+Open youtube
+Wake
+Sleep
+Weather
+What about weather
+Lefty
+Help
+Search music
+Stop
+Cat
+Joke
+Toss coin
+Exit
+Hide
+Appear
+Notepad
+News
+Paint

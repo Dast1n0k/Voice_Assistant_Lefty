@@ -1,59 +1,80 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Speech.Synthesis;
-using System.Speech.Recognition;
 using System.Diagnostics;
-using System.Xml;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
-using Newtonsoft.Json;
+using System.Linq;
+using System.Speech.Recognition;
+using System.Speech.Synthesis;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
+using System.Xml;
 namespace Lefty
 {
     public partial class Form1 : Form
     {
-        SpeechSynthesizer s = new SpeechSynthesizer();//Add voice of assistant
-        Boolean wake = false; //statement of voice assistant
-        Choices list = new Choices();//create list of commands
-        DataSet data = new DataSet();// create obj of class dataset
+        //Add voice of assistant
+        SpeechSynthesizer s = new SpeechSynthesizer();
+
+        //Statement of voice assistant
+        Boolean wake = false; 
+
+        //Create list of commands
+        Choices list = new Choices();
+
+        //Create obj of class dataset
+        DataSet data = new DataSet();
+
         public Form1()
 
         {
-            //create obj of class for recognize your voice and words
+            //Create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
-            // list of commands 
-            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt")); 
 
-            //create a obj of class for grammar of voice bot
+            //List of commands 
+            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt"));
+
+            //Create a obj of class for grammar of voice bot
             GrammarBuilder gb = new GrammarBuilder();
-            gb.Culture = new System.Globalization.CultureInfo("en-US"); // add Culture Info
 
-            gb.Append(list);//add to grammar our commands 
+            //Add Culture Info
+            gb.Culture = new System.Globalization.CultureInfo("en-US");
+
+            //Add to grammar our commands 
+            gb.Append(list);
             Grammar g = new Grammar(gb);
-       
 
-            rec.RequestRecognizerUpdate();
-            rec.LoadGrammar(g);//load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
-            rec.SpeechRecognized += rec_SpeachRecognized;
-            rec.SetInputToDefaultAudioDevice();
-            rec.RecognizeAsync(RecognizeMode.Multiple);
+            try
+            {
+                rec.RequestRecognizerUpdate();
+                rec.LoadGrammar(g);//Load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
+                rec.SpeechRecognized += rec_SpeachRecognized;
+                rec.SetInputToDefaultAudioDevice();
+                rec.RecognizeAsync(RecognizeMode.Multiple);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
 
             CultureInfo myLang = new CultureInfo("en-US");
 
-            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Senior, 60, myLang);//Choice the voice bot gender, age and lang
+            //Choice the voice bot gender, age and lang
+            s.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Senior, 60, myLang);
 
+            //Startposition of Form
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 320, Screen.PrimaryScreen.Bounds.Height - 458);
 
             InitializeComponent();
-
         }
-        // func for saying
+
+        //Assistant speak function
         public void say(String h)
         {
             notifyIcon1.Icon = new Icon("sleep.ico");
@@ -63,108 +84,105 @@ namespace Lefty
             guna2TextBox3.Text = "State: Sleeping";
         }
 
-        public void search_music (String s)
+        public void search_music(String s)
         {
             say("What music to you want?");
-            wake = true;
-            Process.Start($"https://soundcloud.com/search?q={s}");
+            Process.Start($"https://soundcloud.com/search?q=");
         }
-        
-        //commands
+
+        //Commands
         private void rec_SpeachRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            String speech = e.Result.Text;//convert your voice to text
-            guna2TextBox1.Text = speech.ToUpper();//add your text to input box
-            
+            //Convert your voice to text
+            String speech = e.Result.Text;
 
-            if (speech == "lefty")
+            //Add your text to input box
+            guna2TextBox1.Text = speech;
+
+            //Lefty active commands in sleep mode 
+            switch (speech)
             {
-                notifyIcon1.Icon = new Icon("active.ico");
-                guna2TextBox3.Text = "State: Awake";
-                wake = true;
-                guna2TextBox2.Text = ("I am listening");
-            }
-            if (speech == "wake")
-            {
-                this.Show();
-                
+                case "Lefty":
+                    notifyIcon1.Icon = new Icon("active.ico");
+                    guna2TextBox3.Text = "State: Awake";
+                    wake = true;
+                    guna2TextBox2.Text = ("I am listening");
+                    break;
+
+                case "Wake":
+                    this.Show();
+                    break;
+
+                case "Hide":
+                    this.Hide();
+                    notifyIcon1.Visible = true;
+                    break;
             }
 
-            if (speech == "hide")
-            {
-                this.Hide();
-                
-                notifyIcon1.Visible = true;
-            }
-
+            //Lefty active mode  
             if (wake == true)
             {
-            
+                switch (speech)
+                {
+                    case "Hello":
+                        say(data.greetings_action());//func from database
+                        break;
 
-                if (speech == "hello")
-                {
-                    say(data.greetings_action());// func from database
-                }
+                    case "Search music":
+                        search_music(speech);
+                        break;
 
-                if (speech == "search music")
-                {
-                    search_music(speech);
-                }
+                    case "What time is it":
+                        say(DateTime.Now.ToString("h.mm tt"));
+                        break;
 
-                if (speech == "what time is it")
-                {
-                    say(DateTime.Now.ToString("h.mm tt"));
-                }
+                    case "What is today":
+                        say(DateTime.Now.ToString("M/d/yyyy"));
+                        break;
 
-                if (speech == "what is today")
-                {
-                    say(DateTime.Now.ToString("M/d/yyyy"));
-                }
+                    case "How are you":
+                        say("Great, and you?");
+                        break;
 
-                if (speech == "how are you")
-                {
-                    say("Great, and you?");
-                }
+                    case "Open google":
+                        Process.Start("https://www.google.com/");
+                        break;
 
-                if (speech == "open google")
-                {
-                    Process.Start("https://www.google.com/");
-                }
+                    case "Weather":
+                        say(data.get_weather());//func from database
+                        break;
 
-                if (speech == "weather")
-                {
-                    say(data.get_weather());//func from database
-                }
+                    case "Notepad":
+                        Process.Start("notepad");
+                        break;
 
-                if (speech == "help")
-                {
-                    MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
-                }
-                if (speech == "joke")
-                {
-                    say(data.get_jokes());//func from database
-                }
-                if (speech == "toss coin")
-                {
-                    say(data.toss_a_coin());
-                }
-                if (speech == "news")
-                {
-                    say(data.get_news());
-                }
-                if (speech == "exit")
-                {
-                    Application.Exit();
+                    case "Paint":
+                        Process.Start("mspaint");
+                        break;
+
+                    case "Help":
+                        MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
+                        break;
+
+                    case "Joke":
+                        say(data.get_jokes());//func from database
+                        break;
+
+                    case "Toss coin":
+                        say(data.toss_a_coin());
+                        break;
+
+                    case "News":
+                        say(data.get_news());
+                        break;
+
+                    case "Exit":
+                        Application.Exit();
+                        break;
                 }
             }
         }
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Show();
@@ -177,6 +195,5 @@ namespace Lefty
             Hide();
             notifyIcon1.Visible = true;
         }
-
     }
 }
