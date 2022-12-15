@@ -87,7 +87,6 @@ namespace Lefty
             {
                 this.Show();
                 
-                notifyIcon1.Visible = true;
             }
 
             if (speech == "hide")
