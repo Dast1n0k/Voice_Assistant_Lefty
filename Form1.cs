@@ -133,103 +133,110 @@ namespace Lefty
             //Lefty active mode  
             if (wake == true)
             {
-                switch (speech)
+                try
                 {
-                    case "Hello":
-                        say(data.greetings_action());//func from database
-                        break;
+                    switch (speech)
+                    {
+                        case "Hello":
+                            say(data.greetings_action());//func from database
+                            break;
 
-                    case "Search music":
-                        search_music(speech);
-                        break;
+                        case "Search music":
+                            search_music(speech);
+                            break;
 
-                    case "Open word":
-                        Process.Start("winword");
-                        say("");
-                        break;
+                        case "Open word":
+                            Process.Start("winword");
+                            say("");
+                            break;
 
-                    case "Open excel":
-                        Process.Start("excel");
-                        say("");
-                        break;
+                        case "Open excel":
+                            Process.Start("excel");
+                            say("");
+                            break;
 
-                    case "Open powerpoint":
-                        Process.Start("powerpnt");
-                        say("");
-                        break;
-                    
-                    case "What time is it":
-                        say(DateTime.Now.ToString("h.mm tt"));
-                        break;
+                        case "Open powerpoint":
+                            Process.Start("powerpnt");
+                            say("");
+                            break;
 
-                    case "What is today":
-                        say(DateTime.Now.ToString("M/d/yyyy"));
-                        break;
+                        case "What time is it":
+                            say(DateTime.Now.ToString("h.mm tt"));
+                            break;
 
-                    case "How are you":
-                        say("Great, and you?");
-                        break;
+                        case "What is today":
+                            say(DateTime.Now.ToString("M/d/yyyy"));
+                            break;
 
-                    case "Open google":
-                        Process.Start("https://www.google.com/");
-                        say("");
-                        break;
+                        case "How are you":
+                            say("Great, and you?");
+                            break;
 
-                    case "Weather":
-                        say(data.get_weather());//func from database
-                        break;
+                        case "Open google":
+                            Process.Start("https://www.google.com/");
+                            say("");
+                            break;
 
-                    case "Notepad":
-                        Process.Start("notepad");
-                        say("");
-                        break;
+                        case "Weather":
+                            say(data.get_weather());//func from database
+                            break;
 
-                    case "Paint":
-                        Process.Start("mspaint");
-                        say("");
-                        break;
+                        case "Notepad":
+                            Process.Start("notepad");
+                            say("");
+                            break;
 
-                    case "Help":
-                        MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
-                        say("");
-                        break;
+                        case "Paint":
+                            Process.Start("mspaint");
+                            say("");
+                            break;
 
-                    case "Joke":
-                        say(data.get_jokes());//func from database
-                        break;
+                        case "Help":
+                            MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
+                            say("");
+                            break;
 
-                    case "Toss coin":
-                        say(data.toss_a_coin());
-                        break;
+                        case "Joke":
+                            say(data.get_jokes());//func from database
+                            break;
 
-                    case "News":
-                        say(data.get_news());
-                        break;
+                        case "Toss coin":
+                            say(data.toss_a_coin());
+                            break;
 
-                    case ("Open my computer"):
-                        Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
-                        say("");
-                        break;
+                        case "News":
+                            say(data.get_news());
+                            break;
 
-                    case ("Stop"):
-                        Process.Start("taskmgr.exe");
-                        say("");
-                        break;
+                        case ("Open my computer"):
+                            Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
+                            say("");
+                            break;
 
-                    case ("Open facebook"):
-                        Process.Start("https://www.facebook.com/");
-                        say("");
-                        break;
+                        case ("Stop"):
+                            Process.Start("taskmgr.exe");
+                            say("");
+                            break;
 
-                    case ("Open mail"):
-                        Process.Start("https://www.gmail.com");
-                        say("");
-                        break;
+                        case ("Open facebook"):
+                            Process.Start("https://www.facebook.com/");
+                            say("");
+                            break;
 
-                    case "Exit":
-                        Application.Exit();
-                        break;
+                        case ("Open mail"):
+                            Process.Start("https://www.gmail.com");
+                            say("");
+                            break;
 
+                        case "Exit":
+                            Application.Exit();
+                            break;
+
+                    }
+                }                
+                catch (Win32Exception w)
+                {
+                MessageBox.Show(w.Message);
                 }
             }
         }
