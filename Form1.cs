@@ -31,9 +31,12 @@ namespace Lefty
         //Create obj of class dataset
         DataSet data = new DataSet();
 
+        //Сurrent time
+        DateTime now = DateTime.Now;
         public Form1()
 
         {
+            InitializeComponent();
             //Create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
 
@@ -53,7 +56,7 @@ namespace Lefty
             try
             {
                 rec.RequestRecognizerUpdate();
-                rec.LoadGrammar(g);//Load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
+                rec.LoadGrammarAsync(g);//Load this grammar to bot that recognizer understand what commands I need and what bot need to recognized
                 rec.SpeechRecognized += rec_SpeachRecognized;
                 rec.SetInputToDefaultAudioDevice();
                 rec.RecognizeAsync(RecognizeMode.Multiple);
@@ -71,7 +74,16 @@ namespace Lefty
             //Startposition of Form
             this.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 320, Screen.PrimaryScreen.Bounds.Height - 458);
 
-            InitializeComponent();
+            //Welcome phrase
+            string time = now.GetDateTimeFormats('t')[0];
+            if (now.Hour >= 0 && now.Hour < 12)
+            { s.SpeakAsync("Good morning, user"); }
+            if (now.Hour >= 12 && now.Hour < 18)
+            { s.SpeakAsync("Good afternoon, user"); }
+            if (now.Hour >= 18 && now.Hour < 24)
+            { s.SpeakAsync("Good evening, user"); }
+
+            
         }
 
         //Assistant speak function
@@ -132,6 +144,18 @@ namespace Lefty
                         search_music(speech);
                         break;
 
+                    case "Open word":
+                        Process.Start("winword");
+                        break;
+
+                    case "Open excel":
+                        Process.Start("excel");
+                        break;
+
+                    case "Open powerpoint":
+                        Process.Start("powerpnt");
+                        break;
+                    
                     case "What time is it":
                         say(DateTime.Now.ToString("h.mm tt"));
                         break;
@@ -174,6 +198,22 @@ namespace Lefty
 
                     case "News":
                         say(data.get_news());
+                        break;
+
+                    case ("Open my computer"):
+                        Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
+                        break;
+
+                    case ("Stop"):
+                        Process.Start("taskmgr.exe");
+                        break;
+
+                    case ("Open facebook"):
+                        Process.Start("https://www.facebook.com/");
+                        break;
+
+                    case ("Open mail"):
+                        Process.Start("https://www.gmail.com");
                         break;
 
                     case "Exit":

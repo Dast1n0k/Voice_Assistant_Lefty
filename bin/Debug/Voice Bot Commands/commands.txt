@@ -1,9 +1,16 @@
 ﻿Hello
+Open my computer
 How are you
 What time is it
 What is today
+Task manager
+Open word
+Open powerpoint
+Open excel
 Open google
 Open youtube
+Open facebook
+Open mail
 Wake
 Sleep
 Weather
