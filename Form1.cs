@@ -109,7 +109,7 @@ namespace Lefty
             String speech = e.Result.Text;
 
             //Add your text to input box
-            guna2TextBox1.Text = speech;
+            guna2TextBox4.Text = speech;
 
             //Lefty active commands in sleep mode 
             switch (speech)
@@ -146,14 +146,17 @@ namespace Lefty
 
                     case "Open word":
                         Process.Start("winword");
+                        say("");
                         break;
 
                     case "Open excel":
                         Process.Start("excel");
+                        say("");
                         break;
 
                     case "Open powerpoint":
                         Process.Start("powerpnt");
+                        say("");
                         break;
                     
                     case "What time is it":
@@ -170,6 +173,7 @@ namespace Lefty
 
                     case "Open google":
                         Process.Start("https://www.google.com/");
+                        say("");
                         break;
 
                     case "Weather":
@@ -178,14 +182,17 @@ namespace Lefty
 
                     case "Notepad":
                         Process.Start("notepad");
+                        say("");
                         break;
 
                     case "Paint":
                         Process.Start("mspaint");
+                        say("");
                         break;
 
                     case "Help":
                         MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
+                        say("");
                         break;
 
                     case "Joke":
@@ -202,18 +209,22 @@ namespace Lefty
 
                     case ("Open my computer"):
                         Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
+                        say("");
                         break;
 
                     case ("Stop"):
                         Process.Start("taskmgr.exe");
+                        say("");
                         break;
 
                     case ("Open facebook"):
                         Process.Start("https://www.facebook.com/");
+                        say("");
                         break;
 
                     case ("Open mail"):
                         Process.Start("https://www.gmail.com");
+                        say("");
                         break;
 
                     case "Exit":
