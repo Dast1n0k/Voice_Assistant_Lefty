@@ -127,7 +127,6 @@ namespace Lefty
 
                 case "Hide":
                     this.Hide();
-                    notifyIcon1.Visible = true;
                     break;
             }
 
