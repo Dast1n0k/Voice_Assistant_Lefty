@@ -229,6 +229,7 @@ namespace Lefty
                     case "Exit":
                         Application.Exit();
                         break;
+
                 }
             }
         }
