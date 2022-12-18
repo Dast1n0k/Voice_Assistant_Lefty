@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Media;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Text;
@@ -34,11 +33,9 @@ namespace Lefty
 
         //Сurrent time
         DateTime now = DateTime.Now;
-
-        private SoundPlayer notification_sound;
         public Form1()
 
-        {   
+        {
             InitializeComponent();
             //Create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
@@ -55,8 +52,6 @@ namespace Lefty
             //Add to grammar our commands 
             gb.Append(list);
             Grammar g = new Grammar(gb);
-
-            notification_sound = new SoundPlayer("listening_sound.wav");
 
             try
             {
@@ -120,7 +115,6 @@ namespace Lefty
             switch (speech)
             {
                 case "Lefty":
-                    notification_sound.Play();
                     notifyIcon1.Icon = new Icon("active.ico");
                     guna2TextBox3.Text = "State: Awake";
                     wake = true;
