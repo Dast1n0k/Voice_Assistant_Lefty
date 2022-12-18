@@ -61,3 +61,10 @@ D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Guna.UI2.dll
 D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Newtonsoft.Json.dll
 D:\Project_Assistant\Voice_Assistant_Lefty\bin\Debug\Newtonsoft.Json.xml
 D:\Project_Assistant\Voice_Assistant_Lefty\obj\Debug\Lefty.csproj.CopyComplete
+E:\Source\bin\Debug\Lefty.exe.config
+E:\Source\bin\Debug\Lefty.exe
+E:\Source\bin\Debug\Lefty.pdb
+E:\Source\bin\Debug\Guna.UI2.dll
+E:\Source\bin\Debug\Newtonsoft.Json.dll
+E:\Source\bin\Debug\Newtonsoft.Json.xml
+E:\Source\obj\Debug\Lefty.csproj.CopyComplete
