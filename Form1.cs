@@ -213,6 +213,10 @@ namespace Lefty
                             say(data.get_news());
                             break;
 
+                        case "Course":
+                            say(data.get_course());
+                            break;
+
                         case ("Open my computer"):
                             Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
                             say("");

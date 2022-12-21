@@ -35,4 +35,10 @@ namespace Lefty
     {
         public List<NewsDescription> results { get; set; }
     }
+
+    class CourseDescription
+    {
+        public string ccy { get; set; }
+        public double buy { get; set; }
+    }
 }

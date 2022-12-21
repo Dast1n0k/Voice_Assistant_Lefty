@@ -1,6 +1,7 @@
 ﻿Hello
 Open my computer
 How are you
+Course
 What time is it
 What is today
 Task manager

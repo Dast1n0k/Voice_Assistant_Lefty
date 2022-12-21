@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Net;
@@ -91,6 +92,24 @@ namespace Lefty
             {
                 return Error;
             }
+        }
+
+        public String get_course()//Course parse
+        {
+            //CourseApi url (privatbank)
+            string url = "https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11";
+
+
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            string response;
+            using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+            {
+                response = streamReader.ReadToEnd();
+            }
+            var courseResponse = JsonConvert.DeserializeObject<List<CourseDescription>>(response);
+
+            return "Euro buy " + Math.Round(courseResponse[0].buy) + " dollar buy " + Math.Round(courseResponse[1].buy);
         }
 
         public String toss_a_coin()//Toss coin
