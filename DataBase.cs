@@ -109,7 +109,7 @@ namespace Lefty
             }
             var courseResponse = JsonConvert.DeserializeObject<List<CourseDescription>>(response);
 
-            return "Euro buy " + Math.Round(courseResponse[0].buy) + " dollar buy " + Math.Round(courseResponse[1].buy);
+            return "Euro buy " + Math.Round(courseResponse[0].buy, 2) + "\nDollar buy " + Math.Round(courseResponse[1].buy, 2);
         }
 
         public String toss_a_coin()//Toss coin

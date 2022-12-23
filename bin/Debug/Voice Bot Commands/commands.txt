@@ -1,4 +1,10 @@
-﻿Hello
+﻿po11
+pb11
+pk11
+pb12
+pgh11
+pm11
+Hello
 Open my computer
 How are you
 Course
@@ -23,6 +29,7 @@ Stop
 Cat
 Joke
 Toss coin
+Timetable
 Exit
 Hide
 Appear

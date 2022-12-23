@@ -25,6 +25,8 @@ namespace Lefty
 
         //Statement of voice assistant
         Boolean wake = false; 
+        
+        Boolean search = false;
 
         //Create list of commands
         Choices list = new Choices();
@@ -34,19 +36,29 @@ namespace Lefty
 
         //Сurrent time
         DateTime now = DateTime.Now;
+
+        //Add sound
         private SoundPlayer notification_sound;
+
+        //List of commands 
+        String[] grammarFile = (File.ReadAllLines(@"Voice Bot Commands\commands.txt"));
+
+        //List of group names
+        //String[] groupnamesFile = (File.ReadAllLines(@"Voice Bot Commands\name_groups.txt"));
+
+        //List of groups url
+        String[] groupsFile = (File.ReadAllLines(@"Voice Bot Commands\groups.txt"));
+
         public Form1()
 
         {
-            InitializeComponent();
             //Create obj of class for recognize your voice and words
             SpeechRecognitionEngine rec = new SpeechRecognitionEngine(new CultureInfo("en-US"));
 
-            //List of commands 
-            list.Add(File.ReadAllLines(@"Voice Bot Commands\commands.txt"));
-
             //Create a obj of class for grammar of voice bot
             GrammarBuilder gb = new GrammarBuilder();
+
+            list.Add(grammarFile);
 
             //Add Culture Info
             gb.Culture = new System.Globalization.CultureInfo("en-US");
@@ -87,23 +99,22 @@ namespace Lefty
             if (now.Hour >= 18 && now.Hour < 24)
             { s.SpeakAsync("Good evening, user"); }
 
-            
+            InitializeComponent();
         }
 
         //Assistant speak function
         public void say(String h)
         {
-            notifyIcon1.Icon = new Icon("sleep.ico");
-            wake = false;
             s.SpeakAsync(h);
             guna2TextBox2.Text = h;
-            guna2TextBox3.Text = "State: Sleeping";
         }
 
-        public void search_music(String s)
+        //All what you need for sleep
+        public void sleeping()
         {
-            say("What music to you want?");
-            Process.Start($"https://soundcloud.com/search?q=");
+            notifyIcon1.Icon = new Icon("sleep.ico");
+            wake = false;
+            guna2TextBox3.Text = "State: Sleeping";
         }
 
         //Commands
@@ -114,6 +125,7 @@ namespace Lefty
 
             //Add your text to input box
             guna2TextBox4.Text = speech;
+
 
             //Lefty active commands in sleep mode 
             switch (speech)
@@ -135,8 +147,27 @@ namespace Lefty
                     break;
             }
 
+            //Search groups in kpi site
+            if (search)
+            {
+                
+                int resp = Array.IndexOf(grammarFile, speech);
+                try
+                {   
+                    Process.Start($"https://schedule.kpi.ua/?groupId={groupsFile[resp]}");
+                    search = false;
+                    sleeping();
+                }
+                catch (System.IndexOutOfRangeException) 
+                {
+                    say("INVALID GROUP!");
+                    search = false;
+                    sleeping();
+                }
+            }
+
             //Lefty active mode  
-            if (wake == true)
+            if (wake == true && search == false)
             {
                 try
                 {
@@ -144,97 +175,107 @@ namespace Lefty
                     {
                         case "Hello":
                             say(data.greetings_action());//func from database
-                            break;
-
-                        case "Search music":
-                            search_music(speech);
+                            sleeping();
                             break;
 
                         case "Open word":
                             Process.Start("winword");
-                            say("");
+                            sleeping();
                             break;
 
                         case "Open excel":
                             Process.Start("excel");
-                            say("");
+                            sleeping();
                             break;
 
                         case "Open powerpoint":
                             Process.Start("powerpnt");
-                            say("");
+                            sleeping();
                             break;
 
                         case "What time is it":
                             say(DateTime.Now.ToString("h.mm tt"));
+                            sleeping();
                             break;
 
                         case "What is today":
                             say(DateTime.Now.ToString("M/d/yyyy"));
+                            sleeping();
                             break;
 
                         case "How are you":
                             say("Great, and you?");
+                            sleeping();
                             break;
 
                         case "Open google":
                             Process.Start("https://www.google.com/");
-                            say("");
+                            sleeping();
                             break;
 
                         case "Weather":
                             say(data.get_weather());//func from database
+                            sleeping();
                             break;
 
                         case "Notepad":
                             Process.Start("notepad");
-                            say("");
+                            sleeping();
                             break;
 
                         case "Paint":
                             Process.Start("mspaint");
-                            say("");
+                            sleeping();
                             break;
 
                         case "Help":
                             MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
-                            say("");
+                            sleeping();
                             break;
 
                         case "Joke":
                             say(data.get_jokes());//func from database
+                            sleeping();
                             break;
 
                         case "Toss coin":
                             say(data.toss_a_coin());
+                            sleeping();
                             break;
 
                         case "News":
                             say(data.get_news());
+                            sleeping();
                             break;
 
                         case "Course":
                             say(data.get_course());
+                            sleeping();
                             break;
 
                         case ("Open my computer"):
                             Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
-                            say("");
+                            sleeping();
                             break;
 
                         case ("Stop"):
                             Process.Start("taskmgr.exe");
-                            say("");
+                            sleeping();
                             break;
 
                         case ("Open facebook"):
                             Process.Start("https://www.facebook.com/");
-                            say("");
+                            sleeping();
                             break;
 
                         case ("Open mail"):
                             Process.Start("https://www.gmail.com");
-                            say("");
+                            sleeping();
+                            break;
+
+                        case ("Timetable"):
+                            search = true;
+                            say("Say group name");
                             break;
 
                         case "Exit":
@@ -249,6 +290,8 @@ namespace Lefty
                 }
             }
         }
+
+        
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
