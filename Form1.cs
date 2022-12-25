@@ -138,7 +138,7 @@ namespace Lefty
                     guna2TextBox2.Text = ("I am listening");
                     break;
 
-                case "Show":
+                case "Wake":
                     Show();
                     break;
 
