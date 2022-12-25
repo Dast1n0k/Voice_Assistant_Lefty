@@ -258,7 +258,7 @@ namespace Lefty
                             sleeping();
                             break;
 
-                        case ("Stop"):
+                        case ("Task manager"):
                             Process.Start("taskmgr.exe");
                             sleeping();
                             break;
@@ -304,6 +304,11 @@ namespace Lefty
         {
             Hide();
             notifyIcon1.Visible = true;
+        }
+
+        private void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

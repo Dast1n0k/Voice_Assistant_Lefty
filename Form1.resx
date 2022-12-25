@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2Panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEBLAEsAAD/4QCwRXhpZgAATU0AKgAAAAgAAQEOAAIAAACNAAAAGgAAAABBYnN0
         cmFjdCBiYWNrZ3JvdW5kIG9mIHNoaW5pbmcgcGFydGljbGVzLCBkaWdpdGFsIHNwYXJrbGluZyBibHVl
@@ -1397,7 +1397,7 @@
   <data name="guna2CirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAapBJREFUeF7t3QWYVOfZPvASbSOVtE3SNF9dU0vlX28j7MwKHhx2cVhhF3dd3B2C
+        vAAADrwBlbxySQAAapBJREFUeF7t3QWYVOfZPvASbSOVtE3SNF9dU0vlX28j7MwKHhx2cVhhF3dd3B2C
         OwSXYFFCQtxdgFiTNG2sjTXSJJz/8w679OTsDcx75jxnzszec12/i+97wp55z5znud+xpZ9xHIeIiIhq
         GVgkIiKi7AaLRERElN1gkYiIiLIbLBIREVF2g0UiIiLKbrBIRERE2Q0WiYiIKLvBIhEREWU3WCQiIqLs
         BotERESU3WCRiIiIshssEhERUXaDRSIiIspusEhERETZDRaJiIgou8Ei6eIturfKysqTYm07/ymnTZeR
