@@ -138,12 +138,12 @@ namespace Lefty
                     guna2TextBox2.Text = ("I am listening");
                     break;
 
-                case "Wake":
-                    this.Show();
+                case "Show":
+                    Show();
                     break;
 
                 case "Hide":
-                    this.Hide();
+                    Hide();
                     break;
             }
 
