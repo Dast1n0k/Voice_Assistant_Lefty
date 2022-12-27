@@ -286,7 +286,8 @@ namespace Lefty
                 }                
                 catch (Win32Exception w)
                 {
-                MessageBox.Show(w.Message);
+                    MessageBox.Show(w.Message);
+                    sleeping();
                 }
             }
         }

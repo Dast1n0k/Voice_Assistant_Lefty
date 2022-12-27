@@ -87,14 +87,14 @@
             this.guna2TextBox4.Enabled = false;
             this.guna2TextBox4.FillColor = System.Drawing.Color.SteelBlue;
             this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.LightSkyBlue;
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox4.ForeColor = System.Drawing.Color.White;
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.guna2TextBox4.Location = new System.Drawing.Point(62, 240);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
             this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.White;
-            this.guna2TextBox4.PlaceholderText = "Say lefty";
+            this.guna2TextBox4.PlaceholderText = "Say Lefty";
             this.guna2TextBox4.ReadOnly = true;
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.Size = new System.Drawing.Size(200, 53);
@@ -123,7 +123,8 @@
             this.guna2TextBox2.Multiline = true;
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.White;
+            this.guna2TextBox2.PlaceholderText = "Answer will appear here";
             this.guna2TextBox2.ReadOnly = true;
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.Size = new System.Drawing.Size(200, 65);
@@ -152,6 +153,7 @@
             this.guna2TextBox3.Location = new System.Drawing.Point(82, 79);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.White;
             this.guna2TextBox3.PlaceholderText = "State: Sleeping";
             this.guna2TextBox3.ReadOnly = true;
             this.guna2TextBox3.SelectedText = "";
