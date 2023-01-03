@@ -248,7 +248,7 @@ namespace Lefty
                             sleeping();
                             break;
 
-                        case "Course":
+                        case "Currency rate":
                             say(data.get_course());
                             sleeping();
                             break;
@@ -273,6 +273,26 @@ namespace Lefty
                             sleeping();
                             break;
 
+                        case ("Moodle"):
+                            Process.Start("https://do.ipo.kpi.ua");
+                            sleeping(); 
+                            break;
+
+                        case ("Campus"):
+                            Process.Start("https://ecampus.kpi.ua");
+                            sleeping();
+                            break;
+
+                        case ("Classroom"):
+                            Process.Start("https://classroom.google.com");
+                            sleeping(); 
+                            break;
+
+                        case ("Coursera"):
+                            Process.Start("https://www.coursera.org");
+                            sleeping();
+                            break;
+
                         case ("Timetable"):
                             search = true;
                             say("Say group name");
@@ -281,7 +301,6 @@ namespace Lefty
                         case "Exit":
                             Application.Exit();
                             break;
-
                     }
                 }                
                 catch (Win32Exception w)

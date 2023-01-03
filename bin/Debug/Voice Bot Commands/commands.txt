@@ -17,7 +17,12 @@ Open excel
 Open google
 Open youtube
 Open facebook
+Moodle
+Campus
 Open mail
+Currency rate
+Classroom
+Coursera
 Wake
 Sleep
 Weather
