@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Xml;
+
 namespace Lefty
 {
     public partial class Form1 : Form
@@ -213,6 +214,11 @@ namespace Lefty
                             Sleeping();
                             break;
 
+                        case "Open youtube":
+                            Process.Start("https://www.youtube.com/");
+                            Sleeping();
+                            break;
+
                         case "Weather":
                             Say(data.get_weather());//func from database
                             Sleeping();
@@ -229,7 +235,7 @@ namespace Lefty
                             break;
 
                         case "Help":
-                            MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
+                            MessageBox.Show(" Campus\n\n Classroom\n\n Coursera\n\n Currency rate\n\n Exit\n\n Hello\n\n Help\n\n Hide\n\n How are you\n\n Joke\n\n Lefty\n\n Moodle\n\n News\n\n Notepad\n\n Open excel\n\n Open facebook\n\n Open google\n\n Open mail\n\n Open my computer\n\n Open powerpoint\n\n Open word\n\n Open youtube\n\n Paint\n\n Task manager\n\n Timetable\n\n Toss coin\n\n Wake\n\n Weather\n\n What is today\n\n What time is it\n\n");
                             Sleeping();
                             break;
 

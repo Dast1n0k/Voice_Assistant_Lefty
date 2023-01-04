@@ -4,40 +4,33 @@ pk11
 pb12
 pgh11
 pm11
-Hello
-Open my computer
-How are you
-Course
-What time is it
-What is today
-Task manager
-Open word
-Open powerpoint
-Open excel
-Open google
-Open youtube
-Open facebook
-Moodle
 Campus
-Open mail
-Currency rate
 Classroom
 Coursera
-Wake
-Sleep
-Weather
-What about weather
-Lefty
-Help
-Search music
-Stop
-Cat
-Joke
-Toss coin
-Timetable
+Currency rate
 Exit
+Hello
+Help
 Hide
-Appear
-Notepad
+How are you
+Joke
+Lefty
+Moodle
 News
+Notepad
+Open excel
+Open facebook
+Open google
+Open mail
+Open my computer
+Open powerpoint
+Open word
+Open youtube
 Paint
+Task manager
+Timetable
+Toss coin
+Wake
+Weather
+What is today
+What time is it

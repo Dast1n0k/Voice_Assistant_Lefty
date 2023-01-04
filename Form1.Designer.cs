@@ -197,6 +197,7 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.guna2GradientPanel1.Controls.Add(this.guna2TextBox3);
             this.guna2GradientPanel1.Controls.Add(this.guna2TextBox2);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
@@ -236,6 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(322, 419);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
