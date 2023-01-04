@@ -32,7 +32,7 @@ namespace Lefty
         Choices list = new Choices();
 
         //Create obj of class dataset
-        DataSet data = new DataSet();
+        Parse data = new Parse();
 
         //Сurrent time
         DateTime now = DateTime.Now;
@@ -103,14 +103,14 @@ namespace Lefty
         }
 
         //Assistant speak function
-        public void say(String h)
+        public void Say(String h)
         {
             s.SpeakAsync(h);
             guna2TextBox2.Text = h;
         }
 
         //All what you need for sleep
-        public void sleeping()
+        public void Sleeping()
         {
             notifyIcon1.Icon = new Icon("sleep.ico");
             wake = false;
@@ -156,13 +156,13 @@ namespace Lefty
                 {   
                     Process.Start($"https://schedule.kpi.ua/?groupId={groupsFile[resp]}");
                     search = false;
-                    sleeping();
+                    Sleeping();
                 }
                 catch (System.IndexOutOfRangeException) 
                 {
-                    say("INVALID GROUP!");
+                    Say("INVALID GROUP!");
                     search = false;
-                    sleeping();
+                    Sleeping();
                 }
             }
 
@@ -174,128 +174,128 @@ namespace Lefty
                     switch (speech)
                     {
                         case "Hello":
-                            say(data.greetings_action());//func from database
-                            sleeping();
+                            Say(data.greetings_action());//func from database
+                            Sleeping();
                             break;
 
                         case "Open word":
                             Process.Start("winword");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "Open excel":
                             Process.Start("excel");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "Open powerpoint":
                             Process.Start("powerpnt");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "What time is it":
-                            say(DateTime.Now.ToString("h.mm tt"));
-                            sleeping();
+                            Say(DateTime.Now.ToString("h.mm tt"));
+                            Sleeping();
                             break;
 
                         case "What is today":
-                            say(DateTime.Now.ToString("M/d/yyyy"));
-                            sleeping();
+                            Say(DateTime.Now.ToString("M/d/yyyy"));
+                            Sleeping();
                             break;
 
                         case "How are you":
-                            say("Great, and you?");
-                            sleeping();
+                            Say("Great, and you?");
+                            Sleeping();
                             break;
 
                         case "Open google":
                             Process.Start("https://www.google.com/");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "Weather":
-                            say(data.get_weather());//func from database
-                            sleeping();
+                            Say(data.get_weather());//func from database
+                            Sleeping();
                             break;
 
                         case "Notepad":
                             Process.Start("notepad");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "Paint":
                             Process.Start("mspaint");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "Help":
                             MessageBox.Show(" Hello\n\n How are you\n\n What time is it\n\n What is today\n\n Open google\n\n Wake\n\n Sleep\n\n Weather\n\n What about weather\n\n Lefty\n\n Show commands\n");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case "Joke":
-                            say(data.get_jokes());//func from database
-                            sleeping();
+                            Say(data.get_jokes());//func from database
+                            Sleeping();
                             break;
 
                         case "Toss coin":
-                            say(data.toss_a_coin());
-                            sleeping();
+                            Say(data.toss_a_coin());
+                            Sleeping();
                             break;
 
                         case "News":
-                            say(data.get_news());
-                            sleeping();
+                            Say(data.get_news());
+                            Sleeping();
                             break;
 
                         case "Currency rate":
-                            say(data.get_course());
-                            sleeping();
+                            Say(data.get_course());
+                            Sleeping();
                             break;
 
                         case ("Open my computer"):
                             Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case ("Task manager"):
                             Process.Start("taskmgr.exe");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case ("Open facebook"):
                             Process.Start("https://www.facebook.com/");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case ("Open mail"):
                             Process.Start("https://www.gmail.com");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case ("Moodle"):
                             Process.Start("https://do.ipo.kpi.ua");
-                            sleeping(); 
+                            Sleeping(); 
                             break;
 
                         case ("Campus"):
                             Process.Start("https://ecampus.kpi.ua");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case ("Classroom"):
                             Process.Start("https://classroom.google.com");
-                            sleeping(); 
+                            Sleeping(); 
                             break;
 
                         case ("Coursera"):
                             Process.Start("https://www.coursera.org");
-                            sleeping();
+                            Sleeping();
                             break;
 
                         case ("Timetable"):
                             search = true;
-                            say("Say group name");
+                            Say("Say group name");
                             break;
 
                         case "Exit":
@@ -306,7 +306,7 @@ namespace Lefty
                 catch (Win32Exception w)
                 {
                     MessageBox.Show(w.Message);
-                    sleeping();
+                    Sleeping();
                 }
             }
         }
