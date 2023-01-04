@@ -7,7 +7,7 @@ using System.Net;
 
 namespace Lefty
 {
-    class DataSet 
+    class Parse 
     { 
         
         String[] greetings = new String[4] { "Hello", "Hi", "Hi, how are you", "I'm here, how can I help you" }; //Greetings
