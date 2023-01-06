@@ -1,0 +1,36 @@
+﻿po11
+pb11
+pk11
+pb12
+pgh11
+pm11
+Campus
+Classroom
+Coursera
+Currency rate
+Exit
+Hello
+Help
+Hide
+How are you
+Joke
+Lefty
+Moodle
+News
+Notepad
+Open excel
+Open facebook
+Open google
+Open mail
+Open my computer
+Open powerpoint
+Open word
+Open youtube
+Paint
+Task manager
+Timetable
+Toss coin
+Wake
+Weather
+What is today
+What time is it

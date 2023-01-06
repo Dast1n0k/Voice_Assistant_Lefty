@@ -69,7 +69,7 @@ namespace Lefty
             Grammar g = new Grammar(gb);
 
             notification_sound = new SoundPlayer("listening_sound.wav");
-
+            
             try
             {
                 rec.RequestRecognizerUpdate();
@@ -113,7 +113,7 @@ namespace Lefty
         //All what you need for sleep
         public void Sleeping()
         {
-            notifyIcon1.Icon = new Icon("sleep.ico");
+            notifyIcon1.Icon = new Icon(@"Icons\sleep.ico");
             wake = false;
             guna2TextBox3.Text = "State: Sleeping";
         }
@@ -133,7 +133,7 @@ namespace Lefty
             {
                 case "Lefty":
                     notification_sound.Play();
-                    notifyIcon1.Icon = new Icon("active.ico");
+                    notifyIcon1.Icon = new Icon(@"Icons\active.ico");
                     guna2TextBox3.Text = "State: Awake";
                     wake = true;
                     guna2TextBox2.Text = ("I am listening");
@@ -235,7 +235,7 @@ namespace Lefty
                             break;
 
                         case "Help":
-                            MessageBox.Show(" Campus\n\n Classroom\n\n Coursera\n\n Currency rate\n\n Exit\n\n Hello\n\n Help\n\n Hide\n\n How are you\n\n Joke\n\n Lefty\n\n Moodle\n\n News\n\n Notepad\n\n Open excel\n\n Open facebook\n\n Open google\n\n Open mail\n\n Open my computer\n\n Open powerpoint\n\n Open word\n\n Open youtube\n\n Paint\n\n Task manager\n\n Timetable\n\n Toss coin\n\n Wake\n\n Weather\n\n What is today\n\n What time is it\n\n");
+                            MessageBox.Show(" Campus\n\n Classroom\n\n Coursera\n\n Currency rate\n\n Exit\n\n Hello\n\n Help\n\n Hide\n\n How are you\n\n Joke\n\n Lefty\n\n Moodle\n\n News\n\n Notepad\n\n Open excel\n\n Open facebook\n\n Open google\n\n Open mail\n\n Open my computer\n\n Open powerpoint\n\n Open word\n\n Open youtube\n\n Paint\n\n Task manager\n\n Timetable\n\n Toss coin\n\n Wake\n\n Weather\n\n What is today\n\n What time is it\n\n","List of commands");
                             Sleeping();
                             break;
 

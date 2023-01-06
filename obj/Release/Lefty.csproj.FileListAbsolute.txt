@@ -9,3 +9,7 @@ D:\Project_Assistant\Voice_Assistant_Lefty\obj\Release\Lefty.csproj.GenerateReso
 D:\Project_Assistant\Voice_Assistant_Lefty\obj\Release\Lefty.csproj.CoreCompileInputs.cache
 D:\Project_Assistant\Voice_Assistant_Lefty\obj\Release\Lefty.exe
 D:\Project_Assistant\Voice_Assistant_Lefty\obj\Release\Lefty.pdb
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Release\Guna.UI2.dll
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Release\Newtonsoft.Json.dll
+D:\Project_Assistant\Voice_Assistant_Lefty\bin\Release\Newtonsoft.Json.xml
+D:\Project_Assistant\Voice_Assistant_Lefty\obj\Release\Lefty.csproj.CopyComplete
