@@ -20,12 +20,19 @@ News
 Notepad
 Open excel
 Open facebook
+Facebook
 Open google
+Google
 Open mail
+Mail
 Open my computer
+My computer
 Open powerpoint
+Powerpoint
 Open word
+Word
 Open youtube
+Youtube
 Paint
 Task manager
 Timetable

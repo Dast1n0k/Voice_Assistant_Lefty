@@ -180,6 +180,7 @@ namespace Lefty
                             break;
 
                         case "Open word":
+                        case "Word":
                             Process.Start("winword");
                             Sleeping();
                             break;
@@ -190,6 +191,7 @@ namespace Lefty
                             break;
 
                         case "Open powerpoint":
+                        case "Powerpoint":
                             Process.Start("powerpnt");
                             Sleeping();
                             break;
@@ -210,11 +212,13 @@ namespace Lefty
                             break;
 
                         case "Open google":
+                        case "Google":
                             Process.Start("https://www.google.com/");
                             Sleeping();
                             break;
 
                         case "Open youtube":
+                        case "Youtube":
                             Process.Start("https://www.youtube.com/");
                             Sleeping();
                             break;
@@ -259,47 +263,50 @@ namespace Lefty
                             Sleeping();
                             break;
 
-                        case ("Open my computer"):
+                        case "Open my computer":
+                        case "My computer":
                             Process.Start("explorer.exe", "::{20d04fe0-3aea-1069-a2d8-08002b30309d}");
                             Sleeping();
                             break;
 
-                        case ("Task manager"):
+                        case "Task manager":
                             Process.Start("taskmgr.exe");
                             Sleeping();
                             break;
 
-                        case ("Open facebook"):
+                        case "Open facebook":
+                        case "Facebook":
                             Process.Start("https://www.facebook.com/");
                             Sleeping();
                             break;
 
-                        case ("Open mail"):
+                        case "Open mail":
+                        case "Mail":
                             Process.Start("https://www.gmail.com");
                             Sleeping();
                             break;
 
-                        case ("Moodle"):
+                        case "Moodle":
                             Process.Start("https://do.ipo.kpi.ua");
                             Sleeping(); 
                             break;
 
-                        case ("Campus"):
+                        case "Campus":
                             Process.Start("https://ecampus.kpi.ua");
                             Sleeping();
                             break;
 
-                        case ("Classroom"):
+                        case "Classroom":
                             Process.Start("https://classroom.google.com");
                             Sleeping(); 
                             break;
 
-                        case ("Coursera"):
+                        case "Coursera":
                             Process.Start("https://www.coursera.org");
                             Sleeping();
                             break;
 
-                        case ("Timetable"):
+                        case "Timetable":
                             search = true;
                             Say("Say group name");
                             break;
