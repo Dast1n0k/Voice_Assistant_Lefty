@@ -186,7 +186,6 @@ namespace Lefty
                             break;
 
                         case "Open excel":
-                        case "Excel":
                             Process.Start("excel");
                             Sleeping();
                             break;

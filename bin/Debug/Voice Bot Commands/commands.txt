@@ -19,7 +19,6 @@ Moodle
 News
 Notepad
 Open excel
-Excel
 Open facebook
 Facebook
 Open google
